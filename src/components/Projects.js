@@ -1,6 +1,6 @@
 import React from 'react';
 import './Projects.css';
-import netflixCloneImage from '../assets/images/Netflix.jpg';
+import netflixCloneImage from '../assets/images/Netflix.jpeg';
 import portfolioImage from '../assets/images/Free_Vector.jpg';
 
 import { FaExternalLinkAlt } from 'react-icons/fa'; // Import the icon for 'Go To'
@@ -9,7 +9,7 @@ import { FaExternalLinkAlt } from 'react-icons/fa'; // Import the icon for 'Go T
 const projects = [
     {
         id: 1,
-        title: 'Netflix Clone',
+        title: 'Image-Gallery',
         description: 'Netflix clone website is created using ReactJS which is the replica of the popular streaming platform - Netflix, complete with similar features and user interface. Username: saira, Password: princess@9.',
         link: 'https://klmamatha.github.io/Image-Gallery-With-filter/', // Link to your project
         thumbnail: netflixCloneImage, // Replace with actual thumbnail
@@ -48,7 +48,7 @@ const projects = [
 function Projects() {
     return (
         <div className="projects-container">
-            <h2>My Projects</h2>
+            <h2 className='services-title'>My Projects</h2>
             <div className="projects-grid">
                 {projects.map((project) => (
                     <div key={project.id} className="project-card">

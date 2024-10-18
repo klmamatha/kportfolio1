@@ -1,108 +1,156 @@
 /* Set the background color and layout */
 .home-container {
-    background-color: #081a6e;
-    /* Light blue background */
-    height: 100vh;
-    /* Full viewport height */
+    background-color: #1b0658;
+        height: 100vh;
+        /* Full viewport height */
     display: flex;
     flex-direction: column;
-    margin: 0px;
+    margin: 0;
     padding: 0;
-    /* Arrange children in a column */
-
-    /* Space between content and buttons */
-    /* Padding around content */
-
-}
-
-.kkk2 {
-    font-size: 20px;
-    color: hsl(189, 20%, 33%);
-    margin: 0 auto 0;
-    padding: 10px;
-    text-align: justify;
 }
 
 /* Main content area */
 .home-content {
+    display: grid;
+        grid-template-columns: 60% 30%;
+        margin-top: 150px;
+        padding: 0;
+}
+
+/* Floating circular image */
+.floating-image img {
+    width: 350px;
+    height: 350px;
+    border-radius: 50%;
+    /* Circular image */
+    object-fit: cover;
+    border: 4px solid #fff;
+    box-shadow: 0 4px 10px rgba(158, 214, 228, 0.2);
+    margin-left: 20px;
+}
+
+/* Common alignment for h3, h4, social icons, and download button */
+.align-left {
     display: flex;
-    /* Align text and image horizontally */
-    flex-grow: 1;
-    align-items: center;
-    padding: 0px;
-    margin-top: 100px;
-    /* Allow content to take up available space */
-    /* Center content vertically */
+    flex-direction: column;
+    align-items: flex-start;
+    margin-left: 80px;
+    /* Uniform left alignment */
+    gap: 20px;
+    /* Consistent spacing between elements */
 }
 
 /* Text content styles */
-.text-content {
-    max-width: 700px;
-    /* Limit width for text */
-    margin-right: 50px;
-    text-align: left;
-    /* Space between text and image */
-}
-
-.text-content h4 {
-    font-size: 2rem;
-    /* Size for h2 */
-    color: #ecf1f3;
-    /* Text color */
+h3,
+h4 {
+    font-size: 40px;
+    color: #f7f8f7;
     margin: 0;
-    padding: 5px;
-}
-
-.text-content h3 {
-    font-size: 1.5rem;
-    /* Size for h2 */
-    color: #ecf1f3;
-    /* Text color */
-    margin: 0;
-    padding: 5px;
+    padding: 0;
 }
 
 .text-content3 {
     font-size: 3rem;
-    padding-top: 5px;
-    /* Size for h1 */
     font-weight: bold;
     color: #0ef;
-    /* Text color */
     margin: 0;
 }
 
+.kkk2 {
+    font-size: 18px;
+    color: hsl(41, 84%, 59%);
+    text-align: justify;
+}
 
 /* Styling for social icons */
 .social-icons {
-    display: inline-flex;
+    display: flex;
+        gap: 10px;
+        /* Space between icons */
+        margin: 0;
+    }
+    
+    /* Popup Overlay */
+    .popup-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(22, 5, 122, 0.8);
+        /* Slightly darker overlay */
+        display: flex;
     justify-content: center;
     align-items: center;
-    background: transparent;
-    border: 0.2rem solid var(--main-color);
-    border-radius: 50%;
-    margin: 3rem 1.5rem 3rem 0;
-    transition: 0.5s ease;
-    padding-right: 20px;
-    height: 44px;
-    z-index: 999;
-    width: 230px;
-    height: 80px;
+    z-index: 1000;
+    }
+    
+    /* Popup Content */
+    .popup-content {
+        background-color: rgb(242, 242, 245);
+        width: 80%;
+        /* 80% of the screen width */
+        height: 100%;
+        /* 80% of the screen height */
+        border-top-left-radius: 100px;
+        border-top-right-radius: 100px;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        box-shadow: 0 4px 8px rgb(149, 222, 240);
+        overflow: hidden;
+        margin-top: 80px;
+        /* Prevents content overflow */
+    }
+    
+    /* Close Button */
+    .close-button {
+        position: fixed;
+        top: 20px;
+        /* At the top of the page */
+        right: 20px;
+        /* Align to the right edge */
+        background: rgb(150, 202, 226);
+        border: 2px solid #333;
+        border-radius: 50%;
+        /* Circular button */
+            width: 40px;
+            height: 40px;
+            font-size: 24px;
+            font-weight: bold;
+            cursor: pointer;
+            color: #333;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease;
+            z-index: 1001;
+            /* Ensure it stays on top */
+        }
+        
+        /* Iframe Styling */
+        .popup-iframe {
+            width: 100%;
+            /* Full width of popup content */
+            height: 100%;
+            /* Full height of popup content */
+            border: 20px;
 }
 
+
 .social-icons1 {
-    display: inline-flex;
+    width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        display: flex;
     justify-content: center;
     align-items: center;
     background: transparent;
-    border: 0.2rem solid var(--main-color);
-    border-radius: 50%;
-    transition: 0.5s ease;
-    z-index: 999;
-    width: 40px;
-    height: 40px;
-    color: rgb(241, 244, 245);
     border: 1px solid;
+    color: rgb(241, 244, 245);
+    transition: background-color 0.5s ease;
 }
 
 .social-icons1:hover {
@@ -113,71 +161,46 @@
 /* Style for the resume download button */
 .resume-btn {
     background-color: rgb(89, 178, 244);
-    color: rgb(255, 255, 255);
+    color: white;
     border: 1px solid;
-    box-shadow: rgb(89, 178, 244) 0px 0px 1rem;
-    bottom: 70px;
-    padding: 10px;
+    border-radius: 24px;
+        width: 200px;
+        height: 44px;
     font-size: 14px;
     font-weight: 500;
-    width: 200px;
-    margin: -20px auto;
-    box-sizing: border-box;
-    font-family: "Nunito", sans-serif;
-    text-decoration: none;
-    border: none;
-    outline: none;
-    scroll-behavior: smooth;
-    border-radius: 24px;
-    line-height: 28px;
-    position: absolute;
     cursor: pointer;
-    height: 44px;
-    left: 130px;
+    display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        /* Space between text and icon */
 }
 
-/* Add hover effect for the resume button */
 .resume-btn:hover {
     background-color: #0056b3;
-    /* Darker blue on hover */
 }
 
-/* Floating circular image */
-.floating-image img {
-    width: 350px;
-    /* Increased size */
-    height: 350px;
-    border-radius: 50%;
-    /* Keeps the image circular */
-    object-fit: cover;
-    /* Ensures the image fits within the circle */
-    border: 4px solid #fff;
-    /* Optional: Add a border around the circle */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-    /* Optional: Add shadow for effect */
-    margin-left: 50px;
-}
-
+/* Topmate profile button */
 .topmate-profile .topmate-button {
     background-color: #5cd0f3;
     color: #f7f8f8;
-    bottom: 40px;
     border: 1px solid #f6fafa;
     border-radius: 24px;
     font-size: 15px;
     font-weight: 700;
     line-height: 28px;
     position: fixed;
-    cursor: pointer;
     right: 40px;
+    bottom: 40px;
+        width: 130px;
     height: 44px;
+    cursor: pointer;
     z-index: 999;
-    width: 130px;
 }
 
 .topmate-profile {
-    margin: 0px;
-    padding: 0px;
+    margin: 0;
+        padding: 0;
     box-sizing: border-box;
     font-family: "Nunito", sans-serif;
     text-decoration: none;
@@ -186,22 +209,31 @@
     scroll-behavior: smooth;
 }
 
-.topmate-button {
-    background-color: rgb(89, 178, 244);
-    color: rgb(255, 255, 255);
-    border: 1px solid;
-    box-shadow: rgb(89, 178, 244) 0px 0px 1rem;
-    right: 10px;
-    bottom: 70px;
-    padding: 0px;
-    font-size: 14px;
-    font-weight: 500;
-    width: 80px;
-    margin: 0px;
-    box-sizing: border-box;
-    font-family: "Nunito", sans-serif;
-    text-decoration: none;
-    border: none;
-    outline: none;
-    scroll-behavior: smooth;
+/* Responsive design adjustments */
+@media (max-width: 768px) {
+    .home-content {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .align-left {
+        margin-left: 20px;
+        gap: 15px;
+    }
+
+    .floating-image img {
+        width: 250px;
+        height: 250px;
+        margin-left: 0;
+    }
+
+    .resume-btn {
+        width: 100%;
+    }
+
+    .topmate-profile .topmate-button {
+        width: 100px;
+        bottom: 20px;
+        right: 20px;
+    }
 }
